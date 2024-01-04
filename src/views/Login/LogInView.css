@@ -1,0 +1,22 @@
+.cakeIcon {
+	font-size: 1.7rem;
+	margin-left: 0.5rem;
+}
+
+.atIcon {
+	width: 20px;
+	color: rgb(0 0 0 / 60%);
+}
+
+.keyIcon {
+	width: 17px;
+	color: rgb(0 0 0 / 60%);
+}
+
+.textarea {
+	display: flex;
+	width: 93%;
+	padding: 0.3rem;
+	margin-bottom: 0.5rem;
+	align-items: center;
+}
