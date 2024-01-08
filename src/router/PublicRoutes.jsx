@@ -6,7 +6,7 @@ export const PublicRoutes = () => {
 	return (
 		<>
 			<Routes>
-				<Route path='login' element={<LogInView />} />
+				<Route index path='login' element={<LogInView />} />
 
 				<Route path='tracking' element={<TrackingView />} />
 
