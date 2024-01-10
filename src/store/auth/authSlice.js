@@ -3,7 +3,7 @@ import { createSlice } from "@reduxjs/toolkit";
 const initialState = {
 	status: JSON.parse(localStorage.getItem("user"))
 		? "authenticated"
-		: "checking", // 'checking', 'not-authenticated','authenticated'
+		: "not-authenticated", // 'checking', 'not-authenticated','authenticated'
 	user: JSON.parse(localStorage.getItem("user")) || {},
 	errorMessage: null,
 };
