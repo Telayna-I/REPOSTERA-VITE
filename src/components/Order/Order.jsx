@@ -8,12 +8,13 @@ import {
 	TrashIcon,
 	ArrowUturnLeftIcon,
 } from "@heroicons/react/24/outline";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { saveOrder, setEdit } from "../../store/slices/BoardSlice/BoardSlice";
 import { Link, useNavigate } from "react-router-dom";
 
 const Order = ({ order }) => {
 	const { deleteOrder, finishedOrder } = useOrder();
+	const { role } = useSelector((state) => state.auth);
 	const dispatch = useDispatch();
 	const navigate = useNavigate();
 
@@ -115,7 +116,7 @@ const Order = ({ order }) => {
 						Editar
 					</button>
 				) : null}
-				{order.status ? (
+				{order.status && role === "ADMIN_ROLE" ? (
 					<button
 						onClick={() => {
 							finishedOrder(order._id);

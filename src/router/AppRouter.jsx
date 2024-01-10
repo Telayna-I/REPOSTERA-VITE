@@ -15,7 +15,7 @@ export const AppRouter = () => {
 				) : (
 					<Route element={<PublicRoutes />} path='/*' />
 				)}
-				<Route element={<Navigate to={"/auth"} />} path='/*' />
+				<Route element={<Navigate to={"/"} />} path='/*' />
 			</Routes>
 		</>
 	);

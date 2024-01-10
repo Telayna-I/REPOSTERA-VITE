@@ -1,5 +1,5 @@
 import React from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useForm } from "react-hook-form";
 import {
 	AtSymbolIcon,
@@ -13,6 +13,7 @@ import { BsCake } from "react-icons/bs";
 import { checkingAuthentication } from "../../store/auth/thunks";
 import { useAuthStore } from "../../hooks/useAuthStore";
 import "./LogInView.css";
+import { CustomSpinner } from "../../components/Spinner/Spinner";
 
 const LogInView = () => {
 	const {
@@ -24,12 +25,17 @@ const LogInView = () => {
 
 	const dispatch = useDispatch();
 	const { startLogin } = useAuthStore();
+	const { status } = useSelector((state) => state.auth);
 
 	const onLogIn = async (data) => {
 		dispatch(checkingAuthentication());
 		const { email, password } = data;
 		startLogin({ email, password });
 	};
+
+	if (status === "checking") {
+		return <CustomSpinner />;
+	}
 
 	return (
 		<div className='main'>

@@ -19,7 +19,7 @@ function NavList() {
 
 	const onLogout = () => {
 		startLogout();
-		navigate("/login", {
+		navigate("/", {
 			replace: true,
 		});
 	};
@@ -45,7 +45,7 @@ function NavList() {
 					color='blue-gray'
 					className='p-1 font-bold'>
 					<NavLink
-						to='/login'
+						to='/'
 						className='flex items-center hover:text-blue-500 transition-colors'>
 						Iniciar Sesion
 					</NavLink>
